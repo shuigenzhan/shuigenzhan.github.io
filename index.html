@@ -152,19 +152,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-git常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
+      <a class="article-title" href="/2020/06/11/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">git常用命令</a>
     </h1>
   
 
         
-        <a href="/2020/06/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
+        <a href="/2020/06/11/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
   	<time datetime="2020-06-11T09:35:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
 </a>
         
@@ -172,11 +172,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
+        <h2 id="git工作流"><a href="#git工作流" class="headerlink" title="git工作流"></a>git工作流</h2><p>workspace(工作区) –&gt; add –&gt; index(暂存区) –&gt; commit –&gt; repository</p>
+<p>workspace 是工作区，保存实际文件；使用git add命令可以把工作区文件提交到index(暂存区)，临时保存改动；再用git commit命令可以把index区中的内容提交到本地仓库。</p>
 <hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
+<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><p>git init            –在当前路径下初始化一个空仓库</p>
+<p>git clone        –克隆命令<br>    git clone path1 path2        –克隆一个path1路径下的仓库到path2里<br>    git clone protocol://path    –把远程仓库项目克隆到当前目录下</p>
+<p>git add            –添加一个文件到暂存区</p>
+<p>git commit -m “提交标识符”        –提交index中的文件到本地仓库</p>
+<p>git log                        –查看日志文件，会打印出commit_id，author，date，提交标识符等信息，若git log出现无法退出的情况，输入字母Q即可退出</p>
+<p>git show “commit_id”            –查看”commit_id”提交的内容</p>
 <hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.shuigenzhan.com" target="_blank" rel="noopener">www.shuigenzhan.com</a></p>
+<h2 id="git分支相关命令"><a href="#git分支相关命令" class="headerlink" title="git分支相关命令"></a>git分支相关命令</h2><p>分支是用来将特性开发绝缘开的，初始化一个仓库后(git init)会生成一个master默认分支，在其他分支上进行开发，完成之后再merge到主分支上，自己创建的分支如果不推送到远端就是不为他人所见的</p>
+<p>git branch            –查看路径仓库下的分支</p>
+<p>git checkout -b [branch_name]            –创建一个名为[branch_name]的分支</p>
+<p>git checkout [branch_name]                –切换到[branch_name]分支</p>
+<p>git checkout -d [branch_name]        –删除[branch_name]分支<br>git branch -d [branch_name]            –强制删除[branch_name]分支(与git checkout -d的区别是是否check out)<br>git push origin -delete “删除远程分支”</p>
+<p>git merge [branch_name]            –将[branch_name]分支合并到当前分支<br>git rebase [branch_name]            –也是将[branch_name]分支合并到当前分支<br>Note：merge和rebase的区别详见：<a href="https://zhuanlan.zhihu.com/p/75499871" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/75499871</a></p>
+<p>git checkout -b [branch_name] [commit_id]            –为[commit_id]创建一个名为[branch_name]的分支<br>git branch -b [branch_name] [commit_id]            –为[commit_id]创建一个名为[branch_name]的分支(与git checkout -b的区别是是否check out)</p>
+<p>git cherry-pick [commit_id]            –当一个分支有多次提交，我们只需要合并其中一个提交时会用到cherry-pick</p>
+<p>git stash                –用于临时保存和修改，add之后不能执行stash<br>git stash list            –    查看保存的记录列表<br>git stash clear        –删除所有保存</p>
+<hr>
 
       
 
@@ -189,7 +204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/06/11/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
         </p>
       
 
