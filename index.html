@@ -152,27 +152,80 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-c" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-手把手教你搭建属于自己的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/26/c/">c</a>
+      <a class="article-title" href="/2020/06/26/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">手把手教你搭建属于自己的博客</a>
     </h1>
   
 
         
-        <a href="/2020/06/26/c/" class="archive-article-date">
-  	<time datetime="2020-06-26T10:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
+        <a href="/2020/06/26/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2020-06-26T10:20:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/.com//1.jpg" alt="1"></p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>对于任何从事技术的人来说，高质量的博客仿佛一柄尚方宝剑，能在很多方面给你带来巨大的帮助。坚持写博客既可以加深自己对技术的理解，也能在日后要用到某个技术时可以方便查阅，还能提高自己的写作水平。因此对于一个技术人员来说，坚持写博客既可以把碎片化的时间利用起来，也可以最大化自己的能力、知识和技能。但是很多初学者不知道怎么搭建自己的博客网站，这篇文章就是基于hexo教你搭建属于自己的博客网站。</code></pre><hr>
+<h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><pre><code>系统环境：windows10
+nodejs：下载地址(https://nodejs.org)，选择左侧的LTS版本，安装完成后在命令行用nodejs -v可以查看版本信息
+git：下载地址(https://git-scm.com/)
+安装好以上软件就可以开始配置博客环境了</code></pre><hr>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><pre><code>打开dos窗口，可以用命令[win+R --&gt; cmd]，或者直接通过[开始 --&gt; windows系统 --&gt; 命令提示符打开]</code></pre><blockquote>
+<p>npm install -g cnpm –registry=<a href="http://registry.npm.taobao.org" target="_blank" rel="noopener">http://registry.npm.taobao.org</a>            –安装淘宝的包管理器<br>    因为nodejs自带的包管理器下载速度很慢，因此在根目录下用上面的命令安装淘宝的cnpm，安装完成后用cnpm -v查看是否安装成功，若有版本信息则安装成功</p>
+</blockquote>
+<blockquote>
+<p>cnpm install -g hexo-cli            –安装hexo框架</p>
+</blockquote>
+<blockquote>
+<p>mkdir [dir_name]            –先在根目录下新建一个文件夹，后续的工作都是在该文件夹进行</p>
+</blockquote>
+<blockquote>
+<p>cd [dir_name]            –进入[dir_name]文件夹    </p>
+</blockquote>
+<blockquote>
+<p>hexo init            –用该命令初始化博客</p>
+</blockquote>
+<pre><code>在github上创建一个新的仓库，仓库名字取为[YourGithubName.github.io]，取名后缀必须为.github.io</code></pre><blockquote>
+<p>cnpm install –save hexo-deployer-git            –在[dir_name]文件夹里安装git部署插件</p>
+</blockquote>
+<hr>
+<h2 id="配置-config-yml文档"><a href="#配置-config-yml文档" class="headerlink" title="配置_config.yml文档"></a>配置_config.yml文档</h2><pre><code>在命令行或者直接进入[dir_name]文件夹打开_config.yml文档，命令行用 &gt;notepad _config.yml 命令打开文档，直接进入[dir_name]文件夹编辑则推荐用notepad++打开。
+
+找到#Deployment，按如下配置修改，注意每个冒号后都有一个空格
+deploy：
+        type: git
+        repo: [YourGithubName.github.io]
+        branch: master</code></pre><blockquote>
+<p>hexo d            –使用该命令把本地内容推送到远端，推送完成之后可以通过 <a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> 这个地址访问你的博客</p>
+</blockquote>
+<pre><code>上述步骤都配置好后整个博客的基本环境都已经配置好了</code></pre><hr>
+<h2 id="博客相关操作"><a href="#博客相关操作" class="headerlink" title="博客相关操作"></a>博客相关操作</h2><blockquote>
+<p>hexo n [blog_name]            –新建一个名为[blog_name]的博客</p>
+</blockquote>
+<pre><code>进入[blog_name]\source\_posts\文件夹，里面有.md文档，这就是你的博客内容，用notepad++或者记事本打开就可以编辑你的博客啦</code></pre><blockquote>
+<p>hexo clean            –编辑完成后用该命令清理</p>
+</blockquote>
+<blockquote>
+<p>hexo g            –重新生成</p>
+</blockquote>
+<blockquote>
+<p>hexo s            –启动本地博客服务，启动之后在 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 地址里可以预览网页(只能在本地访问)</p>
+</blockquote>
+<blockquote>
+<p>hexo d            –把本地博客内容推送到远端仓库，完成后在 <a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> 地址里就可以远程访问你的博客了</p>
+</blockquote>
+<pre><code>按照上述步骤配置即可成功搭建自己的博客网站了，以后每次新建一个博客之后都是按照这个步骤去预览和推送，非常方便</code></pre><hr>
+<h2 id="修改网站主题"><a href="#修改网站主题" class="headerlink" title="修改网站主题"></a>修改网站主题</h2><pre><code>对hexo默认的网站主题不满意的话，可以修改网站的主题，个人推荐使用yilia主题</code></pre><blockquote>
+<p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia            –在[blog_name]文件夹里用该命令下载yilia主题</p>
+</blockquote>
+<pre><code>修改hexo根目录的_config.yml文档，找到theme，将landscape修改为yilia即可，其他的关于yilia的配置可以通过百度搜索修改</code></pre><hr>
 
       
 
@@ -185,7 +238,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/26/c/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/06/26/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
         </p>
       
 
