@@ -172,7 +172,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>对于任何从事技术的人来说，高质量的博客仿佛一柄尚方宝剑，能在很多方面给你带来巨大的帮助。坚持写博客既可以加深自己对技术的理解，也能在日后要用到某个技术时可以方便查阅，还能提高自己的写作水平。因此对于一个技术人员来说，坚持写博客既可以把碎片化的时间利用起来，也可以最大化自己的能力、知识和技能。但是很多初学者不知道怎么搭建自己的博客网站，这篇文章就是基于hexo教你搭建属于自己的博客网站。</code></pre><hr>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>对于任何从事技术研究相关的人来说，高质量的博客仿佛一柄尚方宝剑，能在很多方面给你带来巨大的帮助。坚持写博客既可以加深自己对技术的理解，也能在日后要用到某个技术时可以方便查阅，还能提高自己的写作水平。因此对于一个技术人员来说，坚持写博客既可以把碎片化的时间利用起来，也可以最大化自己的能力、知识和技能。但是很多初学者不知道怎么搭建自己的博客网站，这篇文章就是基于hexo教你搭建属于自己的博客网站。</code></pre><hr>
 <h2 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h2><pre><code>系统环境：windows10
 nodejs：下载地址(https://nodejs.org)，选择左侧的LTS版本，安装完成后在命令行用nodejs -v可以查看版本信息
 git：下载地址(https://git-scm.com/)
@@ -288,25 +288,52 @@ deploy：
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git工作流"><a href="#git工作流" class="headerlink" title="git工作流"></a>git工作流</h2><p>workspace(工作区) –&gt; add –&gt; index(暂存区) –&gt; commit –&gt; repository</p>
-<p>workspace 是工作区，保存实际文件；使用git add命令可以把工作区文件提交到index(暂存区)，临时保存改动；再用git commit命令可以把index区中的内容提交到本地仓库。</p>
-<hr>
-<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><p>git init            –在当前路径下初始化一个空仓库</p>
+        <h2 id="git工作流"><a href="#git工作流" class="headerlink" title="git工作流"></a>git工作流</h2><pre><code>workspace(工作区) --&gt; add --&gt; index(暂存区) --&gt; commit --&gt; repository
+
+workspace 是工作区，保存实际文件；使用git add命令可以把工作区文件提交到index(暂存区)，临时保存改动；再用git commit命令可以把index区中的内容提交到本地仓库。</code></pre><hr>
+<h2 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h2><blockquote>
+<p>git init            –在当前路径下初始化一个空仓库</p>
+</blockquote>
+<blockquote>
 <p>git clone        –克隆命令<br>    git clone path1 path2        –克隆一个path1路径下的仓库到path2里<br>    git clone protocol://path    –把远程仓库项目克隆到当前目录下</p>
+</blockquote>
+<blockquote>
 <p>git add            –添加一个文件到暂存区</p>
+</blockquote>
+<blockquote>
 <p>git commit -m [提交标识符]        –提交index中的文件到本地仓库</p>
+</blockquote>
+<blockquote>
 <p>git log                        –查看日志文件，会打印出commit_id，author，date，提交标识符等信息，若git log出现无法退出的情况，输入字母Q即可退出</p>
-<p>git show [commit_id]            –查看”commit_id”提交的内容</p>
+</blockquote>
+<blockquote>
+<p>git show [commit_id]            –查看[commit_id]提交的内容</p>
+</blockquote>
 <hr>
-<h2 id="git分支相关命令"><a href="#git分支相关命令" class="headerlink" title="git分支相关命令"></a>git分支相关命令</h2><p>分支是用来将特性开发绝缘开的，初始化一个仓库后(git init)会生成一个master默认分支，在其他分支上进行开发，完成之后再merge到主分支上，自己创建的分支如果不推送到远端就是不为他人所见的</p>
+<h2 id="git分支相关命令"><a href="#git分支相关命令" class="headerlink" title="git分支相关命令"></a>git分支相关命令</h2><pre><code>分支是用来将特性开发绝缘开的，初始化一个仓库后(git init)会生成一个默认分支master，在其他分支上进行开发，完成之后再merge到主分支上，自己创建的分支如果不推送到远端就是不为他人所见的</code></pre><blockquote>
 <p>git branch            –查看路径仓库下的分支</p>
+</blockquote>
+<blockquote>
 <p>git checkout -b [branch_name]            –创建一个名为[branch_name]的分支</p>
+</blockquote>
+<blockquote>
 <p>git checkout [branch_name]                –切换到[branch_name]分支</p>
+</blockquote>
+<blockquote>
 <p>git checkout -d [branch_name]        –删除[branch_name]分支<br>git branch -d [branch_name]            –强制删除[branch_name]分支(与git checkout -d的区别是是否check out)<br>git push origin -delete “删除远程分支”</p>
+</blockquote>
+<blockquote>
 <p>git merge [branch_name]            –将[branch_name]分支合并到当前分支<br>git rebase [branch_name]            –也是将[branch_name]分支合并到当前分支<br>Note：merge和rebase的区别详见：<a href="https://zhuanlan.zhihu.com/p/75499871" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/75499871</a></p>
+</blockquote>
+<blockquote>
 <p>git checkout -b [branch_name] [commit_id]            –为[commit_id]创建一个名为[branch_name]的分支<br>git branch -b [branch_name] [commit_id]            –为[commit_id]创建一个名为[branch_name]的分支(与git checkout -b的区别是是否check out)</p>
+</blockquote>
+<blockquote>
 <p>git cherry-pick [commit_id]            –当一个分支有多次提交，我们只需要合并其中一个提交时会用到cherry-pick</p>
+</blockquote>
+<blockquote>
 <p>git stash                –用于临时保存和修改，add之后不能执行stash<br>git stash list            –    查看保存的记录列表<br>git stash clear        –删除所有保存</p>
+</blockquote>
 <hr>
 
       
